@@ -10,6 +10,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Servir arquivos estáticos da pasta 'modelagens' (PDFs e HTMLs de processos)
 app.use('/modelagens', express.static(path.join(__dirname, 'modelagens')));
 
+// Servir arquivos estáticos da pasta 'images' (imagens em png)
+app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
+
 // Rota principal que serve o arquivo portfolio.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'portifolio.html'));
@@ -19,7 +22,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
-
-
-
-//testando so pra ver se o git foi configurado direitogs
